@@ -21,7 +21,6 @@ export default function App() {
     const x = Number(inputSlots);
     console.log("Allocated slots:", x);
     console.log("Available applicants:", totalApplicants);
-    
     if (x > 0) {
       applicantPass(x);
     } else {
@@ -35,10 +34,11 @@ export default function App() {
     console.log("Allocated slots:", numToProcess);
   
     const studentIDs = regionSelectedData.studentID;
+    //dani diay ka mag query
     const selectedStudents = studentIDs.map((id) => {
-      return studentsData.find((student) => student.id === id);
+      return studentsData.find((student) => student.id === id); 
     });
-  
+
     // Process only numToProcess applicants
     const passedApplicants = selectedStudents.slice(0, numToProcess).filter((student) => {
       return student.points >= passingScore;
